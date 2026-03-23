@@ -33,23 +33,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = moveInput.ReadValue<Vector2>().x;
-        float y = moveInput.ReadValue<Vector2>().y;
-        Vector3 forward = Camera.main.transform.right;
-        Vector3 right = -Camera.main.transform.forward;
+        Vector2 input = moveInput.ReadValue<Vector2>();
+        Vector3 move = new Vector3(input.x, 0, input.y);
+        transform.Translate(move * speed * Time.deltaTime);
 
-        forward.y = 0f;
-        right.y = 0f;
-
-        forward.Normalize();
-        right.Normalize();
-
-        transform.Translate(y * speed * Time.deltaTime * forward);
-        transform.Translate(x * speed * Time.deltaTime * right);
-
-        if (jumpInput.WasPressedThisFrame())
+        if (jumpInput.triggered && grounded)
         {
-            rb.AddForce(transform.up * jump, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             grounded = false;
         }
     }
