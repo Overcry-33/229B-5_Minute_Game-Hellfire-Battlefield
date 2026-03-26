@@ -32,6 +32,8 @@ public class CameraPivot : MonoBehaviour
         _currentDistance = cameraDistance;
 
         //_cameraTransform = Camera.main.transform;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
