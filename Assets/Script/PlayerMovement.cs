@@ -22,13 +22,7 @@ public class PlayerMovement : MonoBehaviour
         grounded = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            grounded = true;
-        }
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -41,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             grounded = false;
+        }
+        if (Physics.Raycast(transform.position, -transform.up, 1)) 
+        {
+            grounded = true;
         }
     }
 }
