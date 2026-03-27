@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9141104921472149238}
   - component: {fileID: 7840974285066703880}
   - component: {fileID: 681384361561202489}
+  - component: {fileID: 1403378395176505814}
   m_Layer: 0
   m_Name: zombo pototype
   m_TagString: Untagged
@@ -147,3 +148,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1403378395176505814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610275594190146880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b674c42af5d1741862c0c045ad746f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HP_Enemy
+  maxHealth: 100
+  Damage: 10
